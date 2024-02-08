@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #fdbf00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mengisi seluruh tinggi viewport */
+    margin: 0; /* Menghapus margin default dari body */
+    padding: 0; /* Menghapus padding default dari body */
+  }
+  
+  .card {
+    width: 80%; /* Menggunakan persentase untuk responsif */
+    max-width: 640px; /* Batasi lebar maksimum */
+    height: 400px;
+    position: relative; /* Ubah menjadi relative */
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+    margin: auto; /* Memposisikan elemen di tengah secara horizontal */
+    display: flex; /* Menjadikan kartu sebagai flex container */
+    flex-direction: column; /* Mengatur anak-anak dalam satu kolom */
+    justify-content: center; /* Memposisikan anak-anak secara vertikal di tengah */
+    align-items: center; /* Memposisikan anak-anak secara horizontal di tengah */
+  }
+  
+    
+  .card:hover {
+    transform: rotate(-5deg);
+  }
+  .card:hover .outside {
+    transform: rotateY(-130deg);
+  }
+  .outside,
+  .inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+  }
+  .inside {
+    background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+    line-height: 3;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+  }
+  .outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+  }
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+  .front {
+    background-color: #ffffff;
+  }
+  .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+  }
+  .cake {
+    width: 10%;
+    position: absolute;
+    bottom: 30px;
+  }
+  .outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+  }
+  .inside h1 {
+    font-size: 120px;
+    line-height: 120px;
+  }
+  .bear{
+    width: 15rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+  .longtext{
+    width:20rem;
+  }
